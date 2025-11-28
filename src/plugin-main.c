@@ -17,14 +17,32 @@ with this program. If not, see <https://www.gnu.org/licenses/>
 */
 
 #include <obs-module.h>
-#include <plugin-support.h>
+#include "plugin-support.h"
+#include <libavcodec/avcodec.h>
 
 OBS_DECLARE_MODULE()
 OBS_MODULE_USE_DEFAULT_LOCALE(PLUGIN_NAME, "en-US")
 
+extern struct obs_encoder_info ffmpeg_h264_rkmpp_encoder;
+//extern struct obs_encoder_info ffmpeg_hevc_rkmpp_encoder;
+//extern struct obs_encoder_info ffmpeg_mjpeg_rkmpp_encoder;
+
+static void register_encoder_if_available(struct obs_encoder_info *info,
+					  const char *id)
+{
+	const AVCodec *c = avcodec_find_encoder_by_name(id);
+	if (c) {
+		obs_register_encoder(info);
+	}
+}
+
 bool obs_module_load(void)
 {
 	obs_log(LOG_INFO, "plugin loaded successfully (version %s)", PLUGIN_VERSION);
+
+	register_encoder_if_available(&ffmpeg_h264_rkmpp_encoder, "h264_rkmpp");
+	//register_encoder_if_available(&ffmpeg_hevc_rkmpp_encoder, "hevc_rkmpp");
+	//register_encoder_if_available(&ffmpeg_mjpeg_rkmpp_encoder, "mjpeg_rkmpp");
 	return true;
 }
 
