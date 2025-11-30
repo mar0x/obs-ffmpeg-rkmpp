@@ -24,18 +24,11 @@ if (( ! (${skips[(Ie)all]} + ${skips[(Ie)deps]}) )) {
   log_group 'Installing obs-studio build dependencies...'
 
   local suffix
-  if [[ ${CPUTYPE} != "${target##*-}" ]] {
-    local -A arch_mappings=(
-      aarch64 arm64
-      x86_64 amd64
-    )
+  suffix=""
 
-    suffix=":${arch_mappings[${target##*-}]}"
+  sudo apt-get install ${apt_args} gcc g++
 
-    sudo apt-get install ${apt_args} gcc-${${target##*-}//_/-}-linux-gnu g++-${${target##*-}//_/-}-linux-gnu
-  }
-
-  sudo add-apt-repository --yes ppa:obsproject/obs-studio
+  #sudo add-apt-repository --yes ppa:obsproject/obs-studio
   sudo apt update
 
   sudo apt-get install ${apt_args} \
@@ -44,6 +37,7 @@ if (( ! (${skips[(Ie)all]} + ${skips[(Ie)deps]}) )) {
     libavformat-dev \
     libgles2-mesa-dev \
     libsimde-dev \
+    libobs-dev \
     obs-studio
 
   local -a _qt_packages=()
