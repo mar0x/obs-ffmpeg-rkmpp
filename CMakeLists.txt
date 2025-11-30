@@ -36,6 +36,7 @@ endif()
 
 target_sources(${CMAKE_PROJECT_NAME} PRIVATE src/plugin-main.c
 			src/obs-ffmpeg-h264-rkmpp.c
+			src/obs-ffmpeg-hevc-rkmpp.c
 			src/obs-ffmpeg-video-encoders.c)
 
 set_target_properties_plugin(${CMAKE_PROJECT_NAME} PROPERTIES OUTPUT_NAME ${_name})
