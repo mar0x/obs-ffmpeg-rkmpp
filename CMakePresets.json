@@ -99,11 +99,11 @@
       }
     },
     {
-      "name": "ubuntu-arm64",
-      "displayName": "Ubuntu arm64",
-      "description": "Build for Ubuntu arm64",
+      "name": "ubuntu-aarch64",
+      "displayName": "Ubuntu aarch64",
+      "description": "Build for Ubuntu aarch64",
       "inherits": ["template"],
-      "binaryDir": "${sourceDir}/build_arm64",
+      "binaryDir": "${sourceDir}/build_aarch64",
       "condition": {
         "type": "equals",
         "lhs": "${hostSystemName}",
@@ -117,10 +117,10 @@
       }
     },
     {
-      "name": "ubuntu-ci-arm64",
-      "inherits": ["ubuntu-arm64"],
-      "displayName": "Ubuntu arm64 CI build",
-      "description": "Build for Ubuntu arm64 on CI",
+      "name": "ubuntu-ci-aarch64",
+      "inherits": ["ubuntu-aarch64"],
+      "displayName": "Ubuntu aarch64 CI build",
+      "description": "Build for Ubuntu aarch64 on CI",
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "RelWithDebInfo",
         "CMAKE_COMPILE_WARNING_AS_ERROR": true,
@@ -172,17 +172,17 @@
       "configuration": "RelWithDebInfo"
     },
     {
-      "name": "ubuntu-arm64",
-      "configurePreset": "ubuntu-arm64",
-      "displayName": "Ubuntu arm64",
-      "description": "Ubuntu build for arm64",
+      "name": "ubuntu-aarch64",
+      "configurePreset": "ubuntu-aarch64",
+      "displayName": "Ubuntu aarch64",
+      "description": "Ubuntu build for aarch64",
       "configuration": "RelWithDebInfo"
     },
     {
-      "name": "ubuntu-ci-arm64",
-      "configurePreset": "ubuntu-ci-arm64",
-      "displayName": "Ubuntu arm64 CI",
-      "description": "Ubuntu CI build for arm64",
+      "name": "ubuntu-ci-aarch64",
+      "configurePreset": "ubuntu-ci-aarch64",
+      "displayName": "Ubuntu aarch64 CI",
+      "description": "Ubuntu CI build for aarch64",
       "configuration": "RelWithDebInfo"
     }
   ]
