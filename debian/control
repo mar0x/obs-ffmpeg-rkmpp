@@ -1,0 +1,22 @@
+Source: obs-ffmpeg-rkmpp
+Section: video
+Priority: optional
+Maintainer: Max <rk-obs@yandex.ru>
+Rules-Requires-Root: no
+Build-Depends:
+  debhelper-compat (= 13),
+  cmake,
+  libobs-dev,
+  libavcodec-dev,
+  libavformat-dev,
+  pkg-config,
+Standards-Version: 4.7.2
+Homepage: https://github.com/mar0x/obs-ffmpeg-rkmpp
+Vcs-Browser: https://github.com/mar0x/obs-ffmpeg-rkmpp
+Vcs-Git: https://github.com/mar0x/obs-ffmpeg-rkmpp.git
+
+Package: obs-ffmpeg-rkmpp
+Architecture: any
+Depends: ${misc:Depends},
+Description: OBS Studio plugin to enable *_rkmpp encoders from ffmpeg
+ FFmpeg with MPP support required
