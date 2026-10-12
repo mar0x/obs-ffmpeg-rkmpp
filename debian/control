@@ -17,6 +17,8 @@ Vcs-Git: https://github.com/mar0x/obs-ffmpeg-rkmpp.git
 
 Package: obs-ffmpeg-rkmpp
 Architecture: any
-Depends: ${misc:Depends},
+Depends:
+  ${misc:Depends},
+  ${shlibs:Depends},
 Description: OBS Studio plugin to enable *_rkmpp encoders from ffmpeg
  FFmpeg with MPP support required

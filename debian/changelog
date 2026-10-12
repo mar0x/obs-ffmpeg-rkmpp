@@ -1,3 +1,9 @@
+obs-ffmpeg-rkmpp (1.0-3~resolute) resolute; urgency=medium
+
+  * Add dependencies
+
+ -- Max <rk-obs@yandex.ru>  Mon, 12 Oct 2026 15:01:59 +0300
+
 obs-ffmpeg-rkmpp (1.0-2~resolute) resolute; urgency=medium
 
   * Add missing locate data.
